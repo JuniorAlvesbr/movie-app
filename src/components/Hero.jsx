@@ -1,7 +1,7 @@
 export default function Hero() {
   return (
     <div
-      className="bg-[url('https://image.tmdb.org/t/p/original/evaFLqtswezLosllRZtJNMiO1UR.jpg')] h-[650px] w-screen bg-no-repeat bg-cover bg-center relative after:content-[''] after:absolute after:inset-0 after:bg-hero-degrade"
+      className="bg-[url('https://image.tmdb.org/t/p/original/evaFLqtswezLosllRZtJNMiO1UR.jpg')] h-[650px] w-full bg-no-repeat bg-cover bg-center relative after:content-[''] after:absolute after:inset-0 after:bg-hero-degrade overflow-hidden"
     >
       <div className="absolute w-1/3 top-1/2 left-10 z-50">
         <h1 className="text-6xl">Avatar</h1>
