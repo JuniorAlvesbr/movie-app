@@ -1,4 +1,4 @@
-# NetFlix-Clone
+# Movie-App
 ![Alt Text](/public/netflix.png)
 
 ![HTML](https://img.shields.io/badge/HTML-HTML5-orange) ![CSS](https://img.shields.io/badge/STYLE-CSS3-blue) ![Javascript](https://img.shields.io/badge/JavaScript-JavaScript-yellow) ![React](https://img.shields.io/badge/React-js-%2361dafb)
@@ -8,7 +8,7 @@
 
 # Descrição técnica:
   Nesse projeto foi usado:
-  - ReactJS com vite e sass.
+  - ReactJS com vite e tailwind.
   - Swiper como lib para o slider
   - API do themoviedb.
 
@@ -23,8 +23,8 @@ Neste projeto tive vários desafios, entre eles destaco:
 
 # Utilização:
 ```
-git clone https://github.com/JuniorAlvesbr/netflix-clone.git
-cd netflix-clone
+git clone https://github.com/JuniorAlvesbr/movie-app.git
+cd movie-app
 npm install
 npm run dev
 ```
