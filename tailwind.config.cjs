@@ -7,7 +7,7 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
-        "hero-degrade": "linear-gradient(90deg, rgba(0,0,0,0.9) 25%, rgba(0,0,0,0.0) 100%);"
+        "hero-degrade": "linear-gradient(90deg, rgba(0,0,0,0.9) 25%, rgba(0,0,0,0.0) 45%);"
       }
     },
   },

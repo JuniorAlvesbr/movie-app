@@ -4,7 +4,7 @@ import { IoIosArrowDropleftCircle, IoIosArrowDroprightCircle } from 'react-icons
 
 import 'swiper/css'
 
-export default function Slider() {
+export default function Slider({ trendWeek, setHero }) {
   return (
     <div className='bg-black -translate-y-4'>
       <h2>Trend da Semana</h2>
@@ -19,15 +19,13 @@ export default function Slider() {
         breakpoints={{
           390: {
             slidesPerView: 2,
-            spaceBetween: 0,
+            spaceBetween: 10
           },
           560: {
             slidesPerView: 3,
-            spaceBetween: 30,
           },
           750: {
             slidesPerView: 4,
-            spaceBetween: 40,
           },
           1050: {
             slidesPerView: 6,
@@ -37,9 +35,13 @@ export default function Slider() {
           },
         }}
       >
-        <SwiperSlide className='cursor-pointer'>
-          <img src="https://image.tmdb.org/t/p/w200/uO2yU3QiGHvVp0L5e5IatTVRkYk.jpg" />
-        </SwiperSlide>
+        {trendWeek && trendWeek.map((movie, index) =>
+          <SwiperSlide className='cursor-pointer' key={index}>
+            <div onClick={() => setHero(movie)}>
+              <img src={`https://image.tmdb.org/t/p/w200/${movie.poster_path}`} />
+            </div>
+          </SwiperSlide>
+        )}
 
         <button className='button-prev text-4xl flex justify-center items-center bg-none border-none absolute top-1/2 z-50 cursor-pointer left-3'>
           <IoIosArrowDropleftCircle />
