@@ -4,10 +4,10 @@ import { IoIosArrowDropleftCircle, IoIosArrowDroprightCircle } from 'react-icons
 
 import 'swiper/css'
 
-export default function Slider({ trendWeek, setHero }) {
+export default function Slider({ slideList, setHero }) {
   return (
-    <div className='bg-black -translate-y-4'>
-      <h2>Trend da Semana</h2>
+    <div>
+      <h2 className='text-lg p-3'>{slideList.name}</h2>
       <Swiper
         modules={[Navigation]}
         spaceBetween={10}
@@ -35,7 +35,7 @@ export default function Slider({ trendWeek, setHero }) {
           },
         }}
       >
-        {trendWeek && trendWeek.map((movie, index) =>
+        {slideList && slideList.genre.map((movie, index) =>
           <SwiperSlide className='cursor-pointer' key={index}>
             <div onClick={() => setHero(movie)}>
               <img src={`https://image.tmdb.org/t/p/w200/${movie.poster_path}`} />

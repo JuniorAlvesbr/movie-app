@@ -1,29 +1,22 @@
-import { useEffect, useState } from "react"
 import Hero from "./components/Hero"
 import Slider from "./components/Slider"
+import { MovieContext } from "./providers/movie"
 
-import api from './services/api'
 
 function App() {
-  const [hero, setHero] = useState('')
-  const [trendWeek, setTrendWeek] = useState([])
-
-  useEffect(() => {
-    api.get('/trending/movie/week')
-      .then(Response => {
-        setTrendWeek(Response.data.results)
-        setHero(Response.data.results[0])
-      })
-      .catch(error => console.log(error))
-  }, [])
+  const { movieList, hero, setHero } = MovieContext()
 
   return (
     <>
-      <header>
-        <Hero hero={hero} />
-      </header>
-      <main>
-        <Slider trendWeek={trendWeek} setHero={setHero} />
+      <Hero hero={hero} />
+
+      <main className="pt-[440px]">
+        <Slider slideList={movieList.trendWeek} setHero={setHero} />
+        <Slider slideList={movieList.actions} setHero={setHero} />
+        <Slider slideList={movieList.adventure} setHero={setHero} />
+        <Slider slideList={movieList.war} setHero={setHero} />
+        <Slider slideList={movieList.horror} setHero={setHero} />
+        <Slider slideList={movieList.drama} setHero={setHero} />
       </main>
     </>
   )
